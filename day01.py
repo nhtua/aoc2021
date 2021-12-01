@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 import helper
 import sys
 sys.setrecursionlimit(999999)
