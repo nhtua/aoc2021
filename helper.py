@@ -6,5 +6,5 @@ def lines2list(filePath, debug=False):
     for i, line in enumerate(lines):
         if debug:
             print(line)
-        lines[i] = line.strip().replace('n', '')
+        lines[i] = line.strip().replace('\n', '')
     return lines

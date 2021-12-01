@@ -11,7 +11,7 @@ def detect_increasing_depth(scans: list, count=0):
     except IndexError:
         return count
 
-    if int(current_depth) > int(scans[0]):
+    if int(current_depth) < int(scans[0]):
         return detect_increasing_depth(scans, count=count+1)
     return detect_increasing_depth(scans, count)
 
