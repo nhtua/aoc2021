@@ -6,39 +6,35 @@ commands = helper.lines2command('input/day02.txt', debug=True)
 
 
 def command_v1():
-    dimension = {
-        "x": 0,
-        "z": 0
-    }
+    horizon = 0
+    depth = 0
 
     for cmd in commands:
         if cmd[0] == 'forward':
-            dimension['x'] += int(cmd[1])
+            horizon += int(cmd[1])
         elif cmd[0] == 'up':
-            dimension['z'] -= int(cmd[1])
+            depth -= int(cmd[1])
         else:
-            dimension['z'] += int(cmd[1])
+            depth += int(cmd[1])
 
-    return (dimension['x']*dimension['z'])
+    return (horizon*depth)
 
 
 def command_v2():
-    dimension = {
-        "x": 0,
-        "z": 0,
-        "a": 0
-    }
+    horizon = 0
+    depth = 0
+    aim = 0
 
     for cmd in commands:
         if cmd[0] == 'forward':
-            dimension['x'] += int(cmd[1])
-            dimension['z'] += dimension['a'] * int(cmd[1])
+            horizon += int(cmd[1])
+            depth += aim * int(cmd[1])
         elif cmd[0] == 'up':
-            dimension['a'] -= int(cmd[1])
+            aim -= int(cmd[1])
         else:
-            dimension['a'] += int(cmd[1])
+            aim += int(cmd[1])
 
-    return (dimension['x']*dimension['z'])
+    return (horizon*depth)
 
 
 print(f"V1 {command_v1()}")
